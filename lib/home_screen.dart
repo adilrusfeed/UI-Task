@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:producttable/normal_pricing.dart';
 import 'package:producttable/premium_pricing.dart';
 
@@ -32,6 +33,7 @@ class HomeScreen extends StatelessWidget {
                   color: Colors.amber,
                   fontSize: 50),
             ),
+            Lottie.asset("assets/Animation - 1713422464957.json"),
             SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.all(20.0),

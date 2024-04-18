@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class NormalPriceTagScreen extends StatelessWidget {
   @override
@@ -8,16 +9,57 @@ class NormalPriceTagScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color.fromRGBO(27, 38, 44, 1),
       appBar: AppBar(
-        leading: BackButton(
-            color: Colors.white), // Change back button color to white
-        actionsIconTheme: IconThemeData(color: Colors.red),
-
+        leading: BackButton(color: Colors.white),
+        actionsIconTheme: IconThemeData(color: Colors.amber),
         title: Text(
           'Normal',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
         backgroundColor: Color.fromRGBO(27, 38, 44, 1),
+      ),
+      endDrawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color.fromRGBO(27, 38, 44, 1),
+              ),
+              child: Column(
+                children: [
+                  Text(
+                    'FLUTTURA',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 15),
+                  Text(
+                    "Normal",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Lottie.asset("assets/Animation - 1713422464957.json"),
+            ListTile(
+              title: Text('About Normal Purchase'),
+              onTap: () {},
+            ),
+            Divider(),
+            ListTile(
+              title: Text('Benefits of Normal Purchase'),
+              onTap: () {},
+            ),
+          ],
+        ),
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -45,6 +87,9 @@ class NormalPriceTagScreen extends StatelessWidget {
             buildFeaturesList(),
             SizedBox(height: 30),
             ElevatedButton(
+              style: ButtonStyle(
+                  elevation: MaterialStatePropertyAll(20),
+                  shadowColor: MaterialStatePropertyAll(Colors.amber)),
               onPressed: () {},
               child: Text('START NOW'),
             ),
